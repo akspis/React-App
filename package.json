@@ -1,0 +1,22 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "description": "this is namste react tutorail project",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akspis/React-App.git"
+  },
+  "author": "Akshay Pisal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akspis/React-App/issues"
+  },
+  "homepage": "https://github.com/akspis/React-App#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}
