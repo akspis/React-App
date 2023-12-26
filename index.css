@@ -1,8 +1,59 @@
-#heading {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: red;
+.header {
+  display: flex;
+  border: 1px solid;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.logo > img {
+  width: 100px;
+  height: 100px;
+}
+
+.nav-links > ul {
+  display: flex;
+}
+
+.nav-links > ul > li {
+  margin: 5px;
+  padding: 15px;
+  list-style: none;
+  font-size: 24px;
+}
+
+.resCard {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.seach-section {
+  margin: 10px;
+}
+
+.res-container {
+  background: #f0f0f0;
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.res-container:hover {
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.food-img {
+  width: 200px;
+}
+
+.food-img > img {
+  height: 100%;
+  width: 100%;
+}
+
+.filter-btn {
+  padding: 10px;
+  background: violet;
 }

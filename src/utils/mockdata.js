@@ -1,0 +1,81 @@
+const resList = [
+  {
+    id: 1,
+    food_img: "/3D_bau/banners_new/Pizza.png",
+    resName: "cafe quba",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 3.4,
+  },
+  {
+    id: 2,
+    food_img: "/North_Indian_4.png",
+    resName: "cafe Amat",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 4.2,
+  },
+  {
+    id: 3,
+    food_img: "/3D_bau/banners_new/Burger.png",
+    resName: "Starbuks",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 4.4,
+  },
+  {
+    id: 4,
+    food_img: "/3D_bau/banners_new/Cakes.png",
+    resName: "Mughalni Restaurant",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 3.4,
+  },
+  {
+    id: 5,
+    food_img: "/3D_bau/banners_new/Ice_Creams.png",
+    resName: "Foodies",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 4.4,
+  },
+  {
+    id: 6,
+    food_img: "/Biryani_2.png",
+    resName: "WOW MOMOS",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 3.4,
+  },
+  {
+    id: 7,
+    food_img: "/3D_bau/banners_new/Rolls.png",
+    resName: "Zaika",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 4.4,
+  },
+  {
+    id: 8,
+    food_img: "/3D_bau/banners_new/Pav_Bhaji.png",
+    resName: "Baba Ka Dhaba",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 4.4,
+  },
+  {
+    id: 9,
+    food_img: "/3D_bau/banners_new/Shawarma.png",
+    resName: "Only Veg",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 3.4,
+  },
+  {
+    id: 10,
+    food_img: "/3D_bau/banners_new/Kebabs.png",
+    resName: "cafe Akshay",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 4.4,
+  },
+  {
+    id: 11,
+    food_img: "/South_Indian_4.png",
+    resName: "North Special",
+    cuisins: "mughalini Cafe, birayani",
+    stars: 4.4,
+  },
+];
+
+export default resList;

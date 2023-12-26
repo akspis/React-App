@@ -2,8 +2,9 @@
   "name": "namste-react",
   "version": "1.0.0",
   "description": "this is namste react tutorail project",
-  "main": "App.js",
   "scripts": {
+    "start" : "npx parcel index.html",
+    "build" : "npx parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -17,6 +18,11 @@
   },
   "homepage": "https://github.com/akspis/React-App#readme",
   "devDependencies": {
-    "parcel": "^2.10.3"
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
