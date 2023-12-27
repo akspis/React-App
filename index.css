@@ -57,3 +57,20 @@
   padding: 10px;
   background: violet;
 }
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  background: #f0f0f0;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 0 20px;
+}

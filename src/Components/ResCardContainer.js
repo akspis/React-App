@@ -1,15 +1,19 @@
 import { FOOD_URL } from "../utils/constants";
 
 const ResCardContainer = (props) => {
-  const { food_img, resName, cuisins, stars } = props?.resData;
+  const { name, cloudinaryImageId, cuisines, avgRating } = props?.resData?.info;
   return (
     <div className="res-container">
       <div className="food-img">
-        <img src={FOOD_URL + food_img} alt="food" />
+        <img src={FOOD_URL + cloudinaryImageId} alt="food" />
       </div>
-      <h3>{resName}</h3>
-      <h4>{cuisins}</h4>
-      <h4>{stars}stars</h4>
+      <div>
+        <h3>{name}</h3>
+        <h4 style={{ overflow: "hidden", overflowWrap: "break-word" }}>
+          {cuisines.join(",")}
+        </h4>
+        <h4>{avgRating}stars</h4>
+      </div>
     </div>
   );
 };
