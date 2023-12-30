@@ -21,6 +21,9 @@ class UserClass extends React.Component {
       userInfo: json,
     });
     console.log("child component Did mount");
+    this.timer = setInterval(() => {
+      console.log("namste React");
+    }, 1000);
   }
 
   componentDidUpdate() {
@@ -28,6 +31,8 @@ class UserClass extends React.Component {
   }
 
   componentWillUnmount() {
+    //we right cleanup funtion in unmount method
+    clearInterval(this.timer);
     console.log("child component will unmount");
   }
 

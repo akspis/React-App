@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const User = (props) => {
   const [count] = useState(0);
   const [count1] = useState(0);
   const { name, location, contact } = props;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log("namste React");
+    }, 1000);
+
+    return () => {
+      // we right clenup fn in useEffect like this its very imp for optimization
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
     <div className="user-card">
       <h1>Count: {count}</h1>
