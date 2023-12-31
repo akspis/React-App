@@ -3,11 +3,13 @@ import ResCardContainer from "./ResCardContainer";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filterRestuarant, setFilterRestuarant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
 
   const fetchData = async () => {
     const data = await fetch(SWIGGY_API);
@@ -25,6 +27,8 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  if (onlineStatus !== true) return <h1>oops look like you are offline</h1>;
 
   return (
     <>
