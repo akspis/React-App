@@ -35,10 +35,12 @@ const Body = () => {
       {restaurantList.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="body-container">
-          <div className="seach-section">
-            <div>
+        <div className="m-4 p-4">
+          <div className="seach-section flex pl-[76px]">
+            <div className="">
               <input
+                className="border border-solid m-4 p-2 rounded-lg"
+                placeholder="Search Restaurant"
                 name="search"
                 type="text"
                 value={searchText}
@@ -49,6 +51,7 @@ const Body = () => {
                 }}
               />
               <button
+                className="px-4 py-2 bg-green-300 rounded-lg"
                 onClick={() => {
                   const filterList = restaurantList.filter((res) =>
                     res.info.name
@@ -61,19 +64,21 @@ const Body = () => {
                 Search
               </button>
             </div>
-            <button
-              className="filter-btn"
-              onClick={() => {
-                const filterData = restaurantList.filter(
-                  (res) => res.info.avgRating > 4
-                );
-                setFilterRestuarant(filterData);
-              }}
-            >
-              Top Rated Restaurant
-            </button>
+            <div className="flex items-center px-4">
+              <button
+                className="filter-btn px-4 py-2 bg-gray-300 rounded-lg"
+                onClick={() => {
+                  const filterData = restaurantList.filter(
+                    (res) => res.info.avgRating > 4
+                  );
+                  setFilterRestuarant(filterData);
+                }}
+              >
+                Top Rated Restaurant
+              </button>
+            </div>
           </div>
-          <div className="resCard">
+          <div className="resCard flex flex-wrap pl-[76px]">
             {filterRestuarant.map((resData) => (
               <Link key={resData.info.id} to={"/restaurant/" + resData.info.id}>
                 <ResCardContainer resData={resData} />
