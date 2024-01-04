@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
-import ResCardContainer from "./ResCardContainer";
+import { useContext, useEffect, useState } from "react";
+import ResCardContainer, { withLabelRestaurant } from "./ResCardContainer";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { userContext } from "../utils/userContext";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filterRestuarant, setFilterRestuarant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
+  const { loggedInUser, setUserName } = useContext(userContext);
 
   const fetchData = async () => {
     const data = await fetch(SWIGGY_API);
@@ -24,6 +26,8 @@ const Body = () => {
     );
   };
 
+  const ResCardContainerWithLabel = withLabelRestaurant(ResCardContainer);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -32,7 +36,7 @@ const Body = () => {
 
   return (
     <>
-      {restaurantList.length === 0 ? (
+      {restaurantList?.length === 0 ? (
         <Shimmer />
       ) : (
         <div className="m-4 p-4">
@@ -63,6 +67,13 @@ const Body = () => {
               >
                 Search
               </button>
+
+              <input
+                type="text"
+                className="border-solid"
+                value={loggedInUser}
+                onChange={(e) => setUserName(e.target.value)}
+              />
             </div>
             <div className="flex items-center px-4">
               <button
@@ -79,11 +90,19 @@ const Body = () => {
             </div>
           </div>
           <div className="resCard flex flex-wrap pl-[76px]">
-            {filterRestuarant.map((resData) => (
-              <Link key={resData.info.id} to={"/restaurant/" + resData.info.id}>
-                <ResCardContainer resData={resData} />
-              </Link>
-            ))}
+            {filterRestuarant &&
+              filterRestuarant?.map((resData) => (
+                <Link
+                  key={resData.info.id}
+                  to={"/restaurant/" + resData.info.id}
+                >
+                  {resData.info.promoted ? (
+                    <ResCardContainerWithLabel resData={resData} />
+                  ) : (
+                    <ResCardContainer resData={resData} />
+                  )}
+                </Link>
+              ))}
           </div>
         </div>
       )}
