@@ -17,11 +17,11 @@ const Body = () => {
     const data = await fetch(SWIGGY_API);
     const jsonData = await data.json();
     setRestaurantList(
-      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     setFilterRestuarant(
-      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
@@ -36,7 +36,7 @@ const Body = () => {
 
   return (
     <>
-      {restaurantList?.length === 0 ? (
+      {filterRestuarant?.length === 0 ? (
         <Shimmer />
       ) : (
         <div className="m-4 p-4">
